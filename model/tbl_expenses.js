@@ -1,0 +1,21 @@
+var db=require('../connection');
+var expenses={
+    getAllExpenses:function(callback){
+        return db.query("select * from exp_tbl",callback);
+    },
+    getExpensesById:function(id,callback){
+        return db.query("select * from exp_tbl where fk_user_email=?",[id],callback)
+    },
+    addExpenses:function(exp,callback){
+        return db.query("Insert into exp_tbl values(?,?,?,?,?,?,?)",[null,exp.fk_user_email,exp.fk_scat_id,exp.expense_date,exp.expense_amt,exp.colour_name,exp.exp_note],callback);
+    },
+    deleteExpenses:function(id,callback){
+        return db.query("delete from exp_tbl where expense_id=?",[id],callback);
+       },
+    updateExpenses:function(id,exp,callback){
+        return db.query("update exp_tbl set fk_user_email=?,fk_scat_id=?,expense_date=?,expense_amt=?,colour_name=?,exp_note=? where expense_id=?",[exp.fk_user_email,exp.fk_scat_id,exp.expense_date,exp.expense_amt,exp.colour_name,exp.exp_note],callback);
+    }
+       
+    
+}
+module.exports=expenses;
