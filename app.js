@@ -14,6 +14,7 @@ var expenses=require('./routes/expense_router');
 var loans=require('./routes/loan_router');
 var scategories=require('./routes/subcategory_router');
 var login=require('./routes/login_router');
+var catsubcat=require('./routes/catsubcat');
 var app = express();
 
 // view engine setup
@@ -38,6 +39,7 @@ app.use('/expenses',expenses);
 app.use('/loans',loans)
 app.use('/scategories',scategories);
 app.use('/login',login);
+app.use('/catsubcat',catsubcat);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
