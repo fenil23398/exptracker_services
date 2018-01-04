@@ -11,6 +11,7 @@ var Notes = require('./routes/notes_router');
 var userss = require('./routes/user_router'); //remember for user table userss
 var categories = require('./routes/category_router');
 var expenses = require('./routes/expense_router');
+var spends = require('./routes/spends_router');
 var loans = require('./routes/loan_router');
 var scategories = require('./routes/subcategory_router');
 var login = require('./routes/login_router');
@@ -42,7 +43,8 @@ app.use('/scategories', scategories);
 app.use('/login', login);
 app.use('/catsubcat', catsubcat);
 app.use('/forgetpass', forgetPass);
-// catch 404 and forward to error handler
+app.use('/spends', spends)
+    // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
