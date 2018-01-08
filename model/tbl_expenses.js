@@ -19,8 +19,8 @@ var expenses = {
     getExpenseById: function(id, callback) {
         return db.query("select e.*,s.sub_cat_name,s.icon_image  from exp_tbl e,sub_category_tbl s where e.fk_scat_id = s.sub_cat_id and e.expense_id=? ORDER BY expense_date desc", [id], callback)
     },
-
-
-
+    getExpenseByCatId: function(id, callback) {
+        return db.query("select * from exp_tbl where fk_scat_id=?",[id],callback);
+    },
 }
 module.exports = expenses;

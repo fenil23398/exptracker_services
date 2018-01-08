@@ -58,7 +58,7 @@ router.delete('/:id',function(req,res,next){
     router.put('/:id',function(req,res,next){
         
        Notes.updateNotes(req.params.id,req.body,function(err,rows){
-        
+        //alert('hello to update router');
        if(err)
          {
          res.json(err);

@@ -17,6 +17,7 @@ router.get('/:id?',function(req,res,next){
     else
     {
         Categories.getAllCategories(function(err,rows){
+           
             if(err)
             {
             res.json(err);
