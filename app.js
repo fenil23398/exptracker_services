@@ -17,9 +17,10 @@ var scategories = require('./routes/subcategory_router');
 var login = require('./routes/login_router');
 var catsubcat = require('./routes/catsubcat');
 var forgetPass = require('./routes/forgetPass_router');
-var charts=require('./routes/chartdoghnut_router');
-var expbycat=require('./routes/expensebycat_router');
-var notedesc=require('./routes/notedesc_router');
+var charts = require('./routes/chartdoghnut_router');
+var expbycat = require('./routes/expensebycat_router');
+var notedesc = require('./routes/notedesc_router');
+var subcatexp = require('./routes/subcatexpjoin_router');
 var app = express();
 
 // view engine setup
@@ -47,10 +48,11 @@ app.use('/login', login);
 app.use('/catsubcat', catsubcat);
 app.use('/forgetpass', forgetPass);
 app.use('/spends', spends);
-app.use('/charts',charts);
-app.use('/expbycat',expbycat);
-app.use('/notedesc',notedesc);
-    // catch 404 and forward to error handler
+app.use('/charts', charts);
+app.use('/expbycat', expbycat);
+app.use('/notedesc', notedesc);
+app.use('/subcatexp', subcatexp);
+// catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
