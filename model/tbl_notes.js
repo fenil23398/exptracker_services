@@ -6,6 +6,9 @@ var Notes = {
     getNotesById: function(id, callback) {
         return db.query("select * from notes_tbl where fk_user_email=?", [id], callback)
     },
+    getNoteByColor:function(note,callback){
+        return db.query("select * from notes_tbl where fk_user_email=? and colour_name=?",[note.fk_user_email,note.colour_name],callback);
+    },
     addNotes: function(Note, callback) {
         return db.query("Insert into notes_tbl values(?,?,?,?,?)", [null, Note.fk_user_email, Note.notes_desc, Note.notes_date, Note.colour_name], callback);
     },

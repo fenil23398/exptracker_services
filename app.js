@@ -17,10 +17,18 @@ var scategories = require('./routes/subcategory_router');
 var login = require('./routes/login_router');
 var catsubcat = require('./routes/catsubcat');
 var forgetPass = require('./routes/forgetPass_router');
+
 var charts = require('./routes/chartdoghnut_router');
 var expbycat = require('./routes/expensebycat_router');
 var notedesc = require('./routes/notedesc_router');
 var subcatexp = require('./routes/subcatexpjoin_router');
+
+var charts = require('./routes/chartdoghnut_router');
+var expbycat = require('./routes/expensebycat_router');
+var notedesc = require('./routes/notedesc_router');
+var notecolor = require('./routes/notebycolor_router');
+var spendsById = require('./routes/spendsById_router');
+var changePass = require('./routes/chagePassword_router');
 var app = express();
 
 // view engine setup
@@ -52,7 +60,12 @@ app.use('/charts', charts);
 app.use('/expbycat', expbycat);
 app.use('/notedesc', notedesc);
 app.use('/subcatexp', subcatexp);
-// catch 404 and forward to error handler
+app.use('/charts', charts);
+app.use('/expbycat', expbycat);
+app.use('/notecolor', notecolor);
+app.use('/notedesc', notedesc);
+app.use('/spendsbyid', spendsById);
+app.use('/chagepass', changePass);
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;

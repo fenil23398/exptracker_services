@@ -22,6 +22,9 @@ var expenses = {
     getExpenseByCatId: function(id, callback) {
         return db.query("select * from exp_tbl where fk_scat_id=?", [id], callback);
     },
+    getSpendsById: function(id, callback) {
+        return db.query("select * from exp_tbl where expense_id=?", [id], callback);
+    }
 
 }
 module.exports = expenses;
