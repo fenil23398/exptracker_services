@@ -3,8 +3,14 @@ var scategories = {
     getAllScategories: function(callback) {
         return db.query("select * from sub_category_tbl", callback);
     },
-    getScategoriesById: function(scategory, callback) {
-        return db.query("select * from sub_category_tbl where fk_cat_id=? and s_fk_user_email=?", [scategory.fk_cat_id,scategory.s_fk_user_email], callback);
+    getScategoriesById: function(id, callback) {
+        return db.query("select * from sub_category_tbl where fk_cat_id=?", [id], callback);
+       // return db.query("select * from category_tbl where fk_user_email=? OR fk_user_email=?", [id,'expensetracker8@gmail.com'],callback)
+        //    return db.query("select * from sub_category_tbl where fk_cat_id=? and s_fk_user_email=?", [scategory.fk_cat_id,scategory.s_fk_user_email], callback);
+    },
+    getSelectedcats: function(scategory, callback) {
+        // return db.query("select * from category_tbl where fk_user_email=? OR fk_user_email=?", [id,'expensetracker8@gmail.com'],callback)
+            return db.query("select * from sub_category_tbl where s_fk_user_email=? OR s_fk_user_email=? and  fk_cat_id=? ", [scategory.s_fk_user_email,'expensetracker8@gmail.com',scategory.fk_cat_id], callback);
     },
     addScategories: function(scategory, callback) {
         return db.query("Insert into sub_category_tbl values(?,?,?)", [null, scategory.sub_cat_name, scategory.fk_cat_id], callback);

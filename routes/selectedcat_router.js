@@ -3,17 +3,15 @@ var router=express.Router();
 var scategories=require('../model/tbl_subcategory');
 
 router.post('/',function(req,res,next){
-    scategories.getScategoriesById(req.body,function(err,res){
+    scategories.getSelectedcats(req.body,function(err,count){
         if(err)
         {
             res.json(err);
         }
         else
         {
-         
-            res.json(req.body);
+           res.json(count);
         }
     });
 });
-
 module.exports=router;
