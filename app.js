@@ -17,7 +17,7 @@ var scategories = require('./routes/subcategory_router');
 var login = require('./routes/login_router');
 var catsubcat = require('./routes/catsubcat');
 var forgetPass = require('./routes/forgetPass_router');
-
+var selectedcatr = require('./routes/selectedsubcat_router');
 var charts = require('./routes/chartdoghnut_router');
 var expbycat = require('./routes/expensebycat_router');
 var notedesc = require('./routes/notedesc_router');
@@ -70,6 +70,7 @@ app.use('/notedesc', notedesc);
 app.use('/spendsbyid', spendsById);
 app.use('/chagepass', changePass);
 app.use('/reminder', reminder);
+app.use('/selectedcatr',selectedcatr);
 app.use('/reminderid', reminderId);
 app.use('/expbycolor', expbycolor);
 app.use(function(req, res, next) {
