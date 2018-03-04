@@ -22,6 +22,7 @@ var charts = require('./routes/chartdoghnut_router');
 var expbycat = require('./routes/expensebycat_router');
 var notedesc = require('./routes/notedesc_router');
 var subcatexp = require('./routes/subcatexpjoin_router');
+var linechart = require('./routes/linechart_router');
 
 var charts = require('./routes/chartdoghnut_router');
 var expbycat = require('./routes/expensebycat_router');
@@ -70,6 +71,7 @@ app.use('/notedesc', notedesc);
 app.use('/spendsbyid', spendsById);
 app.use('/chagepass', changePass);
 app.use('/reminder', reminder);
+app.use('/linechart',linechart);
 app.use('/selectedcat', selectedcat);
 app.use('/reminderid', reminderId);
 app.use('/expbycolor', expbycolor);
