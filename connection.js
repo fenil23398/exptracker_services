@@ -1,13 +1,13 @@
 var mysql=require('mysql');
 var cnn=mysql.createPool({
-  /*  host:'localhost',
+    host:'localhost',
     user:'root',
     password:'',
-    database:'exptracker'*/
+    database:'exptracker'
 
-    host:'expensetracker1.db.9462939.474.hostedresource.net',
-    user:'expensetracker1',
-    password:'Fenil@9898',
-    database:'expensetracker1'
+    // host:'expensetracker1.db.9462939.474.hostedresource.net',
+    // user:'expensetracker1',
+    // password:'Fenil@9898',
+    // database:'expensetracker1'
 });
 module.exports=cnn;

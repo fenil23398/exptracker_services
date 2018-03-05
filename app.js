@@ -23,7 +23,7 @@ var expbycat = require('./routes/expensebycat_router');
 var notedesc = require('./routes/notedesc_router');
 var subcatexp = require('./routes/subcatexpjoin_router');
 var linechart = require('./routes/linechart_router');
-
+var bchart=require('./routes/barchart_router');
 var charts = require('./routes/chartdoghnut_router');
 var expbycat = require('./routes/expensebycat_router');
 var notedesc = require('./routes/notedesc_router');
@@ -63,6 +63,7 @@ app.use('/spends', spends);
 app.use('/charts', charts);
 app.use('/expbycat', expbycat);
 app.use('/notedesc', notedesc);
+app.use('/bchart',bchart);
 app.use('/subcatexp', subcatexp);
 app.use('/charts', charts);
 app.use('/expbycat', expbycat);

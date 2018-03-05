@@ -2,9 +2,9 @@ var express = require('express');
 var router = express.Router();
 var lchart = require('../model/chartdoughnut');
 
-router.get('/:id?/:mail?',function(req,res,next){
-    
-           lchart.getexpforline(req.params.id,req.params.mail,function(err,rows){
+router.get('/:id',function(req,res,next){
+        console.log("welcome");
+           lchart.getexpforline(req.params.id,function(err,rows){
                 if(err)
                 {
                     res.json(err);
