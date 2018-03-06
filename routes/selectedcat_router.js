@@ -2,15 +2,13 @@ var express = require('express');
 var router = express.Router();
 var scategories = require('../model/tbl_subcategory');
 
-router.post('/:id?', function(req, res, next) {
-    scategories.getScategoriesById(req.params.id, req.body, function(err, res) {
+router.post('/', function(req, res, next) {
+    scategories.getSelectedcats(req.body, function(err, count) {
         if (err) {
             res.json(err);
         } else {
-
-            res.json(req.body);
+            res.json(count);
         }
     });
 });
-
 module.exports = router;
