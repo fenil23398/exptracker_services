@@ -9,7 +9,7 @@ var chartd = {
     },
     getexpforline:function(id,callback)
     {
-        return db.query("select sum(expense_amt),exp_month from exp_tbl where fk_user_email=? GROUP BY exp_month",[id],callback);
+        return db.query("select sum(expense_amt),exp_month from exp_tbl where fk_user_email=? OR fk_user_email=? GROUP BY exp_month",[id,'exptracker8@gmail.com'],callback);
     },
     getexpforbar:function(id,callback)
     {
