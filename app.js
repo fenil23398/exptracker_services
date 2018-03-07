@@ -33,6 +33,7 @@ var changePass = require('./routes/chagePassword_router');
 var reminder = require('./routes/reminder_router');
 var reminderId = require('./routes/ReminderId_router');
 var expbycolor = require('./routes/expByColor_router');
+var doughnut = require('./routes/doughnut_router');
 var app = express();
 
 // view engine setup
@@ -74,6 +75,7 @@ app.use('/chagepass', changePass);
 app.use('/reminder', reminder);
 app.use('/linechart',linechart);
 app.use('/selectedcat', selectedcat);
+app.use('/doughnut',doughnut);
 app.use('/reminderid', reminderId);
 app.use('/expbycolor', expbycolor);
 app.use(function(req, res, next) {

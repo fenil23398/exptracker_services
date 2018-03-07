@@ -3,9 +3,9 @@ var chartd = {
     getallExpByCat:function(id,callback){
        return db.query("select * from sub_category_tbl where fk_cat_id=?",[id],callback);
     },
-    getexps:function(callback)
+    getexps:function(id,mon,callback)
     {
-        return db.query("select category_tbl.cat_name,sum(exp_tbl.expense_amt) from category_tbl,exp_tbl,sub_category_tbl where category_tbl.cat_id=sub_category_tbl.fk_cat_id and sub_category_tbl.sub_cat_id=exp_tbl.fk_scat_id GROUP BY category_tbl.cat_id",callback);
+        return db.query("select category_tbl.cat_name,sum(exp_tbl.expense_amt) from category_tbl,exp_tbl,sub_category_tbl where category_tbl.cat_id=sub_category_tbl.fk_cat_id and sub_category_tbl.sub_cat_id=exp_tbl.fk_scat_id and (category_tbl.fk_user_email=? OR category_tbl.fk_user_email=?) and exp_tbl.exp_month=? GROUP BY category_tbl.cat_id",[id,'expensetracker8@gmail.com',mon],callback);
     },
     getexpforline:function(id,callback)
     {
