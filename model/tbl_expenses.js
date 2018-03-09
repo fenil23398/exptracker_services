@@ -11,7 +11,7 @@ var expenses = {
     },
 
     addExpenses: function(exp, callback) {
-        return db.query("Insert into exp_tbl values(?,?,?,?,?,?,?)", [null, exp.fk_user_email, exp.fk_scat_id, exp.expense_date, exp.expense_amt, exp.colour_name, exp.exp_note], callback);
+        return db.query("Insert into exp_tbl values(?,?,?,?,?,?,?,?,?)", [null, exp.fk_user_email, exp.fk_scat_id, exp.expense_date, exp.expense_amt, exp.colour_name, exp.exp_note, exp.exp_month, exp.exp_year], callback);
     },
     deleteExpenses: function(id, callback) {
         return db.query("delete from exp_tbl where expense_id=?", [id], callback);
