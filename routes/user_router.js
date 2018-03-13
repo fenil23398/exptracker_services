@@ -69,7 +69,7 @@ var storage = multer.diskStorage({
 
 var upload = multer({ storage: storage });
 router.put('/:id', upload.single('image'), function(req, res, next) {
-
+    console.log(req.body)
     Users.updateUsers(req.params.id, req.body, req.file.filename, function(err, rows) {
 
         if (err) {
