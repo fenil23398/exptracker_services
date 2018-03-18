@@ -37,6 +37,7 @@ var upload = multer({ storage: storage });
 
 router.post('/', upload.single('image'), function(req, res, next) {
     Edoc.addEdoc(req.body, req.file.filename, function(err, count) {
+        console.log(req.file.filename)
         console.log(req.body);
 
         if (err) {

@@ -35,6 +35,7 @@ var reminderId = require('./routes/ReminderId_router');
 var expbycolor = require('./routes/expByColor_router');
 var doughnut = require('./routes/doughnut_router');
 var edocument = require('./routes/Edoc_router');
+var signupUser = require('./routes/signup_router');
 var app = express();
 
 // view engine setup
@@ -80,6 +81,7 @@ app.use('/doughnut', doughnut);
 app.use('/reminderid', reminderId);
 app.use('/expbycolor', expbycolor);
 app.use('/edoc', edocument);
+app.use('/signup', signupUser);
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
