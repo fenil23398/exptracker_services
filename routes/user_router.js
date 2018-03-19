@@ -57,9 +57,20 @@ router.delete('/:id', function(req, res, next) {
 
     });
 });
-router.put('/:id', function(req, res, next) {
+var storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'public/images')
+    },
+    filename: (req, file, cb) => {
+        x = file.fieldname + '-' + Date.now() + path.extname(file.originalname);
+        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+    }
+});
 
-    Users.updateUsers(req.params.id, req.body, function(err, rows) {
+var upload = multer({ storage: storage });
+router.put('/:id', upload.single('image'), function(req, res, next) {
+    console.log(req.body)
+    Users.updateUsers(req.params.id, req.body, req.file.filename, function(err, rows) {
 
         if (err) {
             res.json(err);
