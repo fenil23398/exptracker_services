@@ -5,7 +5,7 @@ var cnn = mysql.createPool({
     password: '',
     database: 'exptracker'
 
-    // host: 'expensetracker1.db.9462939.474.hostedresource.net',
+    //     host: 'expensetracker1.db.9462939.474.hostedresource.net',
     // user: 'expensetracker1',
     // password: 'Fenil@9898',
     // database: 'expensetracker1'
