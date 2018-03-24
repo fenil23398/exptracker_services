@@ -34,6 +34,7 @@ var Users = {
                 })
             }
         });
+
         return db.query("update user_tbl set user_name=?,user_mob_no=?,user_img=?,user_pass=?,user_dpass=? where user_email=?", [User.user_name, User.user_mob_no, filename, User.user_pass, User.user_dpass, id], callback);
     },
     changePassword: function(id, User, callback) {
