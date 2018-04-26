@@ -8,11 +8,11 @@ var Edoc = {
         return db.query("select * from edocument_tbl where fk_user_email=?", [id], callback)
     },
 
-    addEdoc: function(Edocument, filename, callback) {
-        console.log("hello");
-        return db.query("insert into edocument_tbl values(?,?,?,?,?,?)", [null, Edocument.edoc_title, Edocument.fk_user_email, filename, Edocument.image_2, Edocument.image_3], callback);
+    addEdoc: function(Edocument, img1, img2, img3, callback) {
+
+        return db.query("insert into edocument_tbl values(?,?,?,?,?,?)", [null, Edocument.edoc_title, Edocument.fk_user_email, img1, img2, img3], callback);
     },
-    
+
 
 }
 module.exports = Edoc;
