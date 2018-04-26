@@ -12,6 +12,9 @@ var Edoc = {
 
         return db.query("insert into edocument_tbl values(?,?,?,?,?,?)", [null, Edocument.edoc_title, Edocument.fk_user_email, img1, img2, img3], callback);
     },
+    deleteEdoc: function(id, callback) {
+        return db.query("delete from edocument_tbl where edoc_id=?", [id], callback);
+    },
 
 
 }

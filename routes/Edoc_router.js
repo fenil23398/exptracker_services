@@ -47,6 +47,17 @@ router.post('/', upload.any(), function(req, res, next) {
         }
     });
 });
+router.delete('/:id', function(req, res, next) {
 
+    Notes.deleteEdoc(req.params.id, function(err, count) {
+
+        if (err) {
+            res.json(err);
+        } else {
+            res.json(count);
+        }
+
+    });
+});
 
 module.exports = router;
